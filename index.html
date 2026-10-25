@@ -4,11 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#10091c">
-
-<title>Happy Birthday Shree ❤️ | ROXSTAR</title>
-
-<meta name="description" content="A special birthday surprise for Shrilaxmi, filled with memories, friendship and happiness.">
-
+<title>Happy Birthday Shree ❤️</title>
+<meta name="description" content="A birthday surprise for Shree filled with memories, friendship and happiness.">
 <style>
 :root {
     --pink: #ff75b5;
@@ -46,20 +43,13 @@ button {
     display: none !important;
 }
 
-#stars, #confetti {
+#stars {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-}
-
-#stars {
     z-index: -2;
-}
-
-#confetti {
-    z-index: 50;
 }
 
 .glow {
@@ -396,40 +386,28 @@ footer {
 }
 </style>
 </head>
-
 <body>
 
 <canvas id="stars"></canvas>
-<canvas id="confetti"></canvas>
 
 <div class="glow one"></div>
 <div class="glow two"></div>
 
-<!-- BACKGROUND MUSIC
-     Upload bgm.mp3 to the repository root. -->
-
 <audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
 
-<button id="musicButton" class="music-control hidden"
-        onclick="toggleMusic()" aria-label="Toggle background music">
+<button id="musicButton" class="music-control hidden" onclick="toggleMusic()" aria-label="Toggle background music">
     🎵 Music OFF
 </button>
 
-
-<!-- WELCOME AND SURVEY -->
-
 <section class="center" id="welcome">
     <div class="container card">
-
-        <div class="brand">ROXSTAR LABS · SPECIAL PROJECT</div>
-
         <div class="heart">💌</div>
 
         <div id="introStep">
             <h2>A Little Surprise Awaits...</h2>
 
             <p>
-                A special project made with care by
+                Made with care by
                 <strong>Rahulkumar</strong>. ❤️
             </p>
 
@@ -449,76 +427,34 @@ footer {
             </button>
         </div>
 
-
-        <!-- QUESTION 1 -->
-
         <div id="question1" class="hidden">
-
             <div class="badge">QUESTION 1 OF 2</div>
-
             <h2>What's Your Name? 😊</h2>
-
             <p>Let's start with something simple!</p>
-
-            <input
-                type="text"
-                id="visitorName"
-                placeholder="Enter your name..."
-                maxlength="50"
-                autocomplete="given-name"
-            >
-
+            <input type="text" id="visitorName" placeholder="Enter your name..." maxlength="50" autocomplete="given-name">
             <p id="nameError" class="error"></p>
-
-            <button class="btn" onclick="nextQuestion()">
-                NEXT ➜
-            </button>
+            <button class="btn" onclick="nextQuestion()">NEXT ➜</button>
         </div>
-
-
-        <!-- QUESTION 2 -->
 
         <div id="question2" class="hidden">
-
             <div class="badge">QUESTION 2 OF 2</div>
-
             <h2>When Is Your Birthday? 🎂</h2>
-
             <p>Tell me your birthday! 📅</p>
-
-            <input
-                type="date"
-                id="visitorBirthday"
-                autocomplete="bday"
-            >
-
+            <input type="date" id="visitorBirthday" autocomplete="bday">
             <p id="birthdayError" class="error"></p>
-
-            <button class="btn" onclick="finishSurvey()">
-                SUBMIT & CONTINUE 💗
-            </button>
+            <button class="btn" onclick="finishSurvey()">SUBMIT & CONTINUE 💗</button>
         </div>
 
-
-        <!-- FUNNY BIRTHDAY MESSAGE -->
-
         <div id="birthdayJoke" class="hidden">
-
             <div class="heart">😂🎂❤️</div>
-
             <h2>Wait a Second! 😂</h2>
-
             <p id="personalGreeting"></p>
 
             <div class="special-line">
                 😂😂 I know today is your birthday, dear!
-
                 <br><br>
-
                 Happiest Birthday! 🎂🎉
-
                 <br><br>
-
                 Stay Khush, God Bless You! ❤
             </div>
 
@@ -528,80 +464,46 @@ footer {
             </p>
 
             <div id="countdown">5</div>
-
-            <p id="countText" class="small">
-                Your surprise unlocks in 5 seconds...
-            </p>
-
-            <button class="btn" id="startBtn" disabled>
-                🔒 START
-            </button>
+            <p id="countText" class="small">Your surprise unlocks in 5 seconds...</p>
+            <button class="btn" id="startBtn" disabled>🔒 START</button>
         </div>
-
     </div>
 </section>
 
-
-<!-- MAIN BIRTHDAY WEBSITE -->
-
 <main id="birthday" class="hidden">
-
-    <!-- HERO -->
-
     <section class="center">
         <div class="container">
-
             <div class="heart">🎂</div>
-
             <div class="badge">A SPECIAL DAY FOR SOMEONE SPECIAL</div>
-
             <h1>Happy Birthday,<br>Shree! 💗</h1>
-
             <p class="subtitle">
                 Today is all about celebrating you, your smile,
                 your dreams, and the wonderful person you are.
             </p>
-
-            <button class="btn" onclick="scrollToSection('memories')">
-                ✨ OPEN YOUR SURPRISE
-            </button>
+            <button class="btn" onclick="scrollToSection('memories')">✨ OPEN YOUR SURPRISE</button>
         </div>
     </section>
 
-
-    <!-- PHOTO GALLERY -->
-
     <section id="memories">
         <div class="container">
-
             <div class="brand">CHAPTER 01 · MEMORIES</div>
-
             <h2>Little Moments, Beautiful Memories 📸</h2>
-
             <p>
                 Almost 9 years of knowing each other...
                 Here are a few moments to look back on
                 and smile about. ❤️
             </p>
-
             <div class="gallery" id="gallery"></div>
         </div>
     </section>
 
-
-    <!-- FRIENDSHIP LETTER -->
-
     <section id="letter">
         <div class="container card">
-
             <div class="brand">CHAPTER 02 · A LETTER FOR YOU</div>
-
             <h2>Dear Shree, 💌</h2>
-
             <div class="divider"></div>
 
             <div class="message">
-
                 <p>
                     First of all, a very
                     <strong>HAPPY BIRTHDAY, SHRILAXMI! 🎂❤️</strong>
@@ -705,9 +607,8 @@ footer {
 
                 <p class="signature">
                     With lots of good wishes and friendship,<br>
-                    — Rahulkumar (Roxstar) 🤝
+                    — Rahulkumar 🤝
                 </p>
-
             </div>
 
             <button class="btn" onclick="showFinal()">
@@ -716,16 +617,10 @@ footer {
         </div>
     </section>
 
-
-    <!-- FINAL SURPRISE -->
-
     <section id="finalSection" class="hidden center">
         <div class="container card" id="finalMessage">
-
             <div class="heart">🎁</div>
-
             <h1>One Last Thing...</h1>
-
             <div class="divider"></div>
 
             <p>
@@ -745,7 +640,6 @@ footer {
             <br>
 
             <h2>Keep Smiling, Shree! 🌷</h2>
-
             <p>
                 The world needs more happiness,
                 kindness, and beautiful smiles.
@@ -754,12 +648,11 @@ footer {
             <br>
 
             <h2>Happiest Birthday! 🎂💗</h2>
-
             <p>Stay Khush, God Bless You! ❤</p>
 
             <br>
 
-            <p class="signature">— Rahulkumar (Roxstar)</p>
+            <p class="signature">— Rahulkumar</p>
 
             <button class="btn" onclick="replaySurprise()">
                 ↻ RELIVE THE SURPRISE
@@ -768,42 +661,26 @@ footer {
     </section>
 
     <footer>
-        Made with care by Rahulkumar · ROXSTAR ✨
+        Made with care by Rahulkumar ✨
     </footer>
-
 </main>
 
-
-<!-- IMAGE VIEWER -->
-
-<div id="lightbox" class="hidden" role="dialog"
-     aria-label="Photo viewer">
-
+<div id="lightbox" class="hidden" role="dialog" aria-label="Photo viewer">
     <button id="closeLightbox" aria-label="Close photo">×</button>
-
     <img id="lightboxImage" src="" alt="Expanded memory">
 </div>
 
-
 <script>
-/* =====================================
-   STAR BACKGROUND
-===================================== */
-
 const starsCanvas = document.getElementById("stars");
 const starsCtx = starsCanvas.getContext("2d");
-
 let stars = [];
 
 function resizeStars() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
     starsCanvas.width = window.innerWidth * dpr;
     starsCanvas.height = window.innerHeight * dpr;
-
     starsCanvas.style.width = window.innerWidth + "px";
     starsCanvas.style.height = window.innerHeight + "px";
-
     starsCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     stars = Array.from({ length: 75 }, () => ({
@@ -817,38 +694,26 @@ function resizeStars() {
 
 function drawStars() {
     starsCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
     stars.forEach(star => {
         star.a += star.speed;
-
         const opacity = .25 + Math.abs(Math.sin(star.a)) * .7;
-
         starsCtx.beginPath();
         starsCtx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
         starsCtx.fillStyle = `rgba(255,220,250,${opacity})`;
         starsCtx.fill();
     });
-
     requestAnimationFrame(drawStars);
 }
 
 resizeStars();
 drawStars();
-
 window.addEventListener("resize", resizeStars);
-
-
-/* =====================================
-   STEP-BY-STEP SURVEY
-===================================== */
 
 function showQuestion(number) {
     document.getElementById("introStep").classList.add("hidden");
     document.getElementById("question1").classList.add("hidden");
     document.getElementById("question2").classList.add("hidden");
-
-    document.getElementById("question" + number)
-        .classList.remove("hidden");
+    document.getElementById("question" + number).classList.remove("hidden");
 }
 
 function nextQuestion() {
@@ -871,8 +736,7 @@ function finishSurvey() {
 
     if (!name) {
         showQuestion(1);
-        document.getElementById("nameError").textContent =
-            "Please enter your name first 😂";
+        document.getElementById("nameError").textContent = "Please enter your name first 😂";
         return;
     }
 
@@ -883,7 +747,6 @@ function finishSurvey() {
 
     const selectedDate = new Date(birthday + "T00:00:00");
     const today = new Date();
-
     today.setHours(0, 0, 0, 0);
 
     if (Number.isNaN(selectedDate.getTime()) || selectedDate > today) {
@@ -892,35 +755,20 @@ function finishSurvey() {
     }
 
     error.textContent = "";
-
     document.getElementById("personalGreeting").textContent =
-        "Hey " + name +
-        "! 😂❤️ You actually answered both questions! " +
+        "Hey " + name + "! 😂❤️ You actually answered both questions! " +
         "Now let's celebrate your special day! 🎉";
 
     document.getElementById("question2").classList.add("hidden");
     document.getElementById("birthdayJoke").classList.remove("hidden");
 
-    /*
-       Audio playback is attempted after the user's button click.
-       If the browser blocks playback, the music button can start it.
-    */
-
     playMusic();
-
     document.getElementById("musicButton").classList.remove("hidden");
-
     startBirthdayCountdown();
 }
 
-
-/* =====================================
-   BACKGROUND MUSIC
-===================================== */
-
 const bgm = document.getElementById("bgm");
 const musicButton = document.getElementById("musicButton");
-
 bgm.volume = 0.35;
 
 async function playMusic() {
@@ -945,11 +793,6 @@ bgm.addEventListener("error", () => {
     musicButton.textContent = "🎵 Music unavailable";
 });
 
-
-/* =====================================
-   FIVE-SECOND COUNTDOWN
-===================================== */
-
 let birthdayTimer = null;
 
 function startBirthdayCountdown() {
@@ -958,267 +801,109 @@ function startBirthdayCountdown() {
     }
 
     let remaining = 5;
-
     const countdown = document.getElementById("countdown");
     const countText = document.getElementById("countText");
     const startBtn = document.getElementById("startBtn");
 
     startBtn.disabled = true;
     startBtn.textContent = "🔒 START";
-
     countdown.textContent = remaining;
-
-    countText.textContent =
-        "Your surprise unlocks in " + remaining + " seconds...";
+    countText.textContent = "Your surprise unlocks in " + remaining + " seconds...";
 
     birthdayTimer = setInterval(() => {
         remaining--;
 
         if (remaining > 0) {
             countdown.textContent = remaining;
-
-            countText.textContent =
-                "Your surprise unlocks in " + remaining + " seconds...";
+            countText.textContent = "Your surprise unlocks in " + remaining + " seconds...";
         } else {
             clearInterval(birthdayTimer);
             birthdayTimer = null;
-
             countdown.textContent = "✨";
             countText.textContent = "Your surprise is ready!";
-
             startBtn.disabled = false;
             startBtn.textContent = "💗 START THE SURPRISE";
         }
     }, 1000);
 }
 
-
-/* =====================================
-   OPEN BIRTHDAY WEBSITE
-===================================== */
-
-document.getElementById("startBtn").addEventListener("click", () => {
-    const startBtn = document.getElementById("startBtn");
-
-    if (startBtn.disabled) return;
-
-    document.getElementById("welcome").classList.add("hidden");
-    document.getElementById("birthday").classList.remove("hidden");
-
-    window.scrollTo(0, 0);
-
-    launchConfetti();
-});
-
-
-/* =====================================
-   PHOTO GALLERY
-   Filenames: Shri1.jpg to Shri15.jpg
-   All images are in the repository root.
-===================================== */
-
-const gallery = document.getElementById("gallery");
-
-for (let i = 1; i <= 15; i++) {
-    const figure = document.createElement("figure");
-    figure.className = "photo";
-
-    const img = document.createElement("img");
-
-    img.src = `Shri${i}.jpg`;
-    img.alt = `Shree memory ${i}`;
-    img.loading = i <= 3 ? "eager" : "lazy";
-
-    img.addEventListener("error", () => {
-        figure.classList.add("hidden");
-        console.error(`Could not load image: Shri${i}.jpg`);
-    });
-
-    img.addEventListener("click", () => {
-        document.getElementById("lightboxImage").src = img.src;
-        document.getElementById("lightbox").classList.remove("hidden");
-    });
-
-    const caption = document.createElement("figcaption");
-
-    caption.textContent =
-        `Memory ${String(i).padStart(2, "0")} 💗`;
-
-    figure.appendChild(img);
-    figure.appendChild(caption);
-    gallery.appendChild(figure);
-}
-
-
-/* =====================================
-   PHOTO VIEWER
-===================================== */
-
-const lightbox = document.getElementById("lightbox");
-
-document.getElementById("closeLightbox").addEventListener("click", () => {
-    lightbox.classList.add("hidden");
-});
-
-lightbox.addEventListener("click", event => {
-    if (event.target === lightbox) {
-        lightbox.classList.add("hidden");
-    }
-});
-
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-        lightbox.classList.add("hidden");
-    }
-});
-
-
-/* =====================================
-   SCROLL NAVIGATION
-===================================== */
-
 function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: "smooth"
-    });
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
-
-
-/* =====================================
-   FINAL SURPRISE
-===================================== */
 
 function showFinal() {
-    const finalSection = document.getElementById("finalSection");
-
-    finalSection.classList.remove("hidden");
-
-    setTimeout(() => {
-        scrollToSection("finalSection");
-        launchConfetti();
-    }, 100);
+    document.getElementById("letter").classList.add("hidden");
+    document.getElementById("finalSection").classList.remove("hidden");
+    document.getElementById("finalSection").scrollIntoView({ behavior: "smooth" });
 }
 
-
-/* =====================================
-   REPLAY SURPRISE
-===================================== */
-
 function replaySurprise() {
-    if (birthdayTimer) {
-        clearInterval(birthdayTimer);
-        birthdayTimer = null;
-    }
-
     document.getElementById("finalSection").classList.add("hidden");
     document.getElementById("birthday").classList.add("hidden");
     document.getElementById("welcome").classList.remove("hidden");
-
     document.getElementById("introStep").classList.remove("hidden");
     document.getElementById("question1").classList.add("hidden");
     document.getElementById("question2").classList.add("hidden");
     document.getElementById("birthdayJoke").classList.add("hidden");
-
     document.getElementById("visitorName").value = "";
     document.getElementById("visitorBirthday").value = "";
-
     document.getElementById("nameError").textContent = "";
     document.getElementById("birthdayError").textContent = "";
-
+    document.getElementById("countdown").textContent = "5";
+    document.getElementById("countText").textContent = "Your surprise unlocks in 5 seconds...";
+    document.getElementById("startBtn").disabled = true;
+    document.getElementById("startBtn").textContent = "🔒 START";
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+const gallery = document.getElementById("gallery");
+const memoryImages = [
+    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80"
+];
 
-/* =====================================
-   CONFETTI EFFECT
-===================================== */
+memoryImages.forEach((src, index) => {
+    const figure = document.createElement("figure");
+    figure.className = "photo";
+    figure.innerHTML = `
+        <img src="${src}" alt="Memory ${index + 1}" data-src="${src}">
+        <figcaption>Memory ${index + 1}</figcaption>
+    `;
+    gallery.appendChild(figure);
+});
 
-const confettiCanvas = document.getElementById("confetti");
-const confettiCtx = confettiCanvas.getContext("2d");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("closeLightbox");
 
-let particles = [];
-let confettiFrame = null;
-
-function resizeConfetti() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    confettiCanvas.width = window.innerWidth * dpr;
-    confettiCanvas.height = window.innerHeight * dpr;
-
-    confettiCanvas.style.width = window.innerWidth + "px";
-    confettiCanvas.style.height = window.innerHeight + "px";
-
-    confettiCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-
-resizeConfetti();
-
-window.addEventListener("resize", resizeConfetti);
-
-function launchConfetti() {
-    const colors = ["#ff75b5", "#c5a3ff", "#ffffff", "#ffd166"];
-
-    particles = Array.from({ length: 110 }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: -Math.random() * window.innerHeight,
-        vx: (Math.random() - .5) * 3,
-        vy: Math.random() * 3 + 2,
-        size: Math.random() * 5 + 3,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        rotation: Math.random() * 360,
-        rotationSpeed: (Math.random() - .5) * 8
-    }));
-
-    if (confettiFrame) {
-        cancelAnimationFrame(confettiFrame);
-    }
-
-    animateConfetti();
-}
-
-function animateConfetti() {
-    confettiCtx.clearRect(
-        0, 0, window.innerWidth, window.innerHeight
-    );
-
-    particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.rotation += p.rotationSpeed;
-        p.vy += .025;
-
-        confettiCtx.save();
-
-        confettiCtx.translate(p.x, p.y);
-        confettiCtx.rotate(p.rotation * Math.PI / 180);
-
-        confettiCtx.fillStyle = p.color;
-
-        confettiCtx.fillRect(
-            -p.size / 2,
-            -p.size / 2,
-            p.size,
-            p.size * 1.7
-        );
-
-        confettiCtx.restore();
+document.querySelectorAll(".photo img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightboxImage.src = img.dataset.src;
+        lightbox.classList.remove("hidden");
     });
+});
 
-    particles = particles.filter(
-        p => p.y < window.innerHeight + 30
-    );
+closeLightbox.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+    lightboxImage.src = "";
+});
 
-    if (particles.length > 0) {
-        confettiFrame = requestAnimationFrame(animateConfetti);
-    } else {
-        confettiCtx.clearRect(
-            0, 0, window.innerWidth, window.innerHeight
-        );
-
-        confettiFrame = null;
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.add("hidden");
+        lightboxImage.src = "";
     }
-}
-</script>
+});
 
+document.getElementById("startBtn").addEventListener("click", () => {
+    document.getElementById("welcome").classList.add("hidden");
+    document.getElementById("birthday").classList.remove("hidden");
+    document.getElementById("birthday").scrollIntoView({ behavior: "smooth" });
+});
+</script>
 </body>
 </html>
