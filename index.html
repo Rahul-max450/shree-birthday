@@ -1,859 +1,456 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#10091c">
 
-<title>Happy Birthday Shree ❤️</title>
+<title>Happy Birthday Shree ❤️ | ROXSTAR</title>
 
-<meta name="description" content="A birthday surprise for Shree filled with memories, friendship and happiness.">
+<meta name="description" content="A special birthday surprise for Shrilaxmi, filled with memories, friendship and happiness.">
 
 <style>
-
 :root {
-
     --pink: #ff75b5;
-
     --purple: #b58aff;
-
     --bg: #10091c;
-
     --white: #fff8ff;
-
 }
 
-
-
-{
+* {
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
-
-
 
 body {
-
     font-family: "Segoe UI", Arial, sans-serif;
-
     background: var(--bg);
-
     color: var(--white);
-
     overflow-x: hidden;
-
 }
-
-
 
 button, input {
-
     font: inherit;
-
 }
-
-
 
 button {
-
     cursor: pointer;
-
-} 
-
-
+}
 
 .hidden {
-
     display: none !important;
-
 }
 
-
+#stars, #confetti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 
 #stars {
-
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    pointer-events: none;
-
     z-index: -2;
-
 }
 
-
+#confetti {
+    z-index: 50;
+}
 
 .glow {
-
     position: fixed;
-
     width: 250px;
-
     height: 250px;
-
     border-radius: 50%;
-
     filter: blur(100px);
-
     opacity: .25;
-
     pointer-events: none;
-
     z-index: -1;
-
 }
-
-
 
 .glow.one {
-
     background: #ff38a1;
-
     top: 5%;
-
     left: -120px;
-
 }
-
-
 
 .glow.two {
-
     background: #784aff;
-
     bottom: 5%;
-
     right: -120px;
-
 }
-
-
 
 section {
-
     width: 100%;
-
     padding: 60px 20px;
-
 }
-
-
 
 .center {
-
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
 }
-
-
 
 .container {
-
     width: 100%;
-
     max-width: 850px;
-
     margin: auto;
-
 }
-
-
 
 .card {
-
     background: rgba(255,255,255,.075);
-
     border: 1px solid rgba(255,255,255,.13);
-
     border-radius: 25px;
-
     padding: 32px 22px;
-
     backdrop-filter: blur(18px);
-
     -webkit-backdrop-filter: blur(18px);
-
     box-shadow: 0 15px 60px rgba(0,0,0,.25);
-
 }
-
-
 
 .brand {
-
     color: var(--pink);
-
     font-size: .78rem;
-
     font-weight: 800;
-
     letter-spacing: 4px;
-
     margin-bottom: 24px;
-
 }
-
-
 
 h1 {
-
     font-size: clamp(2.3rem, 9vw, 4.5rem);
-
     line-height: 1.15;
-
     margin-bottom: 20px;
-
     background: linear-gradient(120deg, #fff, #ff83c7, #c8a8ff);
-
     -webkit-background-clip: text;
-
     background-clip: text;
-
     color: transparent;
-
 }
-
-
 
 h2 {
-
     font-size: clamp(1.6rem, 6vw, 2.6rem);
-
     margin-bottom: 18px;
-
 }
-
-
 
 p {
-
     line-height: 1.8;
-
     color: #e8dfee;
-
 }
-
-
 
 .heart {
-
     font-size: 4rem;
-
     display: inline-block;
-
     margin-bottom: 15px;
-
     animation: heartbeat 1.5s infinite;
-
 }
-
-
 
 @keyframes heartbeat {
-
     0%, 100% { transform: scale(1); }
-
     50% { transform: scale(1.12); }
-
 }
-
-
 
 .btn {
-
     display: inline-block;
-
     border: none;
-
     padding: 15px 27px;
-
     margin-top: 22px;
-
     border-radius: 50px;
-
     color: #241027;
-
     font-weight: 800;
-
     background: linear-gradient(110deg, #ff85c5, #d5a8ff);
-
     box-shadow: 0 0 25px rgba(255,117,181,.25);
-
     transition: transform .25s, opacity .25s;
-
 }
-
-
 
 .btn:hover:not(:disabled) {
-
     transform: translateY(-3px);
-
 }
-
-
 
 .btn:disabled {
-
     opacity: .4;
-
     cursor: not-allowed;
-
 }
-
-
 
 .small {
-
     font-size: .85rem;
-
     opacity: .8;
-
     margin-top: 15px;
-
 }
-
-
 
 .badge {
-
     display: inline-block;
-
     border: 1px solid rgba(255,117,181,.35);
-
     padding: 8px 16px;
-
     border-radius: 30px;
-
     color: #ffb8da;
-
     margin-bottom: 20px;
-
     font-size: .82rem;
-
 }
-
-
 
 #countdown {
-
     font-size: 4.5rem;
-
     font-weight: 900;
-
     margin-top: 15px;
-
     color: var(--pink);
-
     text-shadow: 0 0 25px rgba(255,117,181,.5);
-
 }
-
-
 
 input[type="text"],
-
 input[type="date"] {
-
     display: block;
-
     width: 100%;
-
     padding: 15px;
-
     margin-top: 22px;
-
     border-radius: 14px;
-
     border: 1px solid rgba(255,255,255,.2);
-
     background: #24152f;
-
     color: white;
-
     font-size: 16px;
-
     outline: none;
-
 }
-
-
 
 input:focus {
-
     border-color: var(--pink);
-
     box-shadow: 0 0 15px rgba(255,117,181,.15);
-
 }
-
-
 
 input[type="date"] {
-
     color-scheme: dark;
-
 }
-
-
 
 .error {
-
     color: #ff85c5 !important;
-
     font-size: .85rem;
-
     margin-top: 10px;
-
 }
-
-
 
 #birthday {
-
     animation: fadeIn 1s ease;
-
 }
-
-
 
 @keyframes fadeIn {
-
     from {
-
         opacity: 0;
-
         transform: translateY(20px);
-
     }
-
     to {
-
         opacity: 1;
-
         transform: translateY(0);
-
     }
-
 }
-
-
 
 .subtitle {
-
     margin: 0 auto 30px;
-
     max-width: 650px;
-
 }
-
-
 
 .divider {
-
     width: 90px;
-
     height: 3px;
-
     border-radius: 5px;
-
     margin: 25px auto;
-
     background: linear-gradient(90deg, var(--pink), var(--purple));
-
 }
-
-
 
 .gallery {
-
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 14px;
-
     margin-top: 30px;
-
 }
-
-
 
 .photo {
-
     background: rgba(255,255,255,.08);
-
     padding: 8px;
-
     border: 1px solid rgba(255,255,255,.12);
-
     border-radius: 15px;
-
     overflow: hidden;
-
     transition: transform .25s;
-
 }
-
-
 
 .photo:hover {
-
     transform: translateY(-5px);
-
 }
-
-
 
 .photo img {
-
     display: block;
-
     width: 100%;
-
     aspect-ratio: 4 / 5;
-
     object-fit: cover;
-
     border-radius: 10px;
-
     cursor: pointer;
-
     background: #25152f;
-
 }
-
-
 
 .photo figcaption {
-
     font-size: .8rem;
-
     padding: 10px 3px 5px;
-
     color: #f1d6eb;
-
 }
-
-
 
 .message {
-
     text-align: left;
-
     margin-top: 30px;
-
 }
-
-
 
 .message p {
-
     margin-bottom: 18px;
-
 }
-
-
 
 .special-line {
-
     border: 1px solid rgba(255,117,181,.4);
-
     background: linear-gradient(
-
         120deg,
-
         rgba(255,117,181,.12),
-
         rgba(181,138,255,.12)
-
     );
-
     border-radius: 20px;
-
     padding: 25px 18px;
-
     text-align: center;
-
     margin: 28px 0;
-
     font-size: 1.1rem;
-
     font-weight: 700;
-
     line-height: 1.8;
-
     color: #ffd0e8;
-
 }
-
-
 
 .signature {
-
     color: var(--pink);
-
     font-weight: 800;
-
     font-size: 1.05rem;
-
 }
-
-
 
 footer {
-
     text-align: center;
-
     padding: 30px 15px;
-
     color: #bbaac9;
-
     font-size: .8rem;
-
 }
-
-
 
 .music-control {
-
     position: fixed;
-
     top: 15px;
-
     right: 15px;
-
     z-index: 90;
-
     border: 1px solid rgba(255,255,255,.2);
-
     background: rgba(30,15,45,.9);
-
     color: white;
-
     border-radius: 30px;
-
     padding: 11px 16px;
-
     backdrop-filter: blur(10px);
-
 }
-
-
 
 #lightbox {
-
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.94);
-
     z-index: 100;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
-
 }
-
-
 
 #lightbox img {
-
     max-width: 95%;
-
     max-height: 85vh;
-
     object-fit: contain;
-
     border-radius: 12px;
-
 }
-
-
 
 #closeLightbox {
-
     position: absolute;
-
     top: 20px;
-
     right: 20px;
-
     background: white;
-
     color: #111;
-
     border: none;
-
     border-radius: 50%;
-
     width: 42px;
-
     height: 42px;
-
     font-size: 24px;
-
 }
-
-
 
 @media (min-width: 650px) {
-
     .gallery {
-
         grid-template-columns: repeat(3, minmax(0, 1fr));
-
         gap: 20px;
-
     }
-
-
 
     .card {
-
         padding: 45px;
-
     }
-
 }
-
-
 
 @media (prefers-reduced-motion: reduce) {
-
     *, *::before, *::after {
-
         scroll-behavior: auto !important;
-
         animation-duration: .01ms !important;
-
         transition-duration: .01ms !important;
-
     }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
-
-
 <canvas id="stars"></canvas>
-
-
+<canvas id="confetti"></canvas>
 
 <div class="glow one"></div>
-
 <div class="glow two"></div>
 
-
+<!-- BACKGROUND MUSIC
+     Upload bgm.mp3 to the repository root. -->
 
 <audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
 
-
-
-<button id="musicButton" class="music-control hidden" onclick="toggleMusic()" aria-label="Toggle background music">
-
+<button id="musicButton" class="music-control hidden"
+        onclick="toggleMusic()" aria-label="Toggle background music">
     🎵 Music OFF
-
 </button>
 
 
+<!-- WELCOME AND SURVEY -->
 
 <section class="center" id="welcome">
-
     <div class="container card">
+
+        <div class="brand">ROXSTAR LABS · SPECIAL PROJECT</div>
 
         <div class="heart">💌</div>
 
-
-
         <div id="introStep">
-
             <h2>A Little Surprise Awaits...</h2>
 
-
-
             <p>
-
-                Made with care by
-
+                A special project made with care by
                 <strong>Rahulkumar</strong>. ❤️
-
             </p>
-
-
 
             <br>
 
-
-
             <p>
-
                 Please answer two little questions before
-
                 unlocking your surprise! 👀
-
             </p>
-
-
 
             <p class="small">
-
                 Don't worry, it's just for fun 😂
-
             </p>
 
-
-
             <button class="btn" onclick="showQuestion(1)">
-
                 LET'S START ✨
-
             </button>
-
         </div>
 
 
+        <!-- QUESTION 1 -->
 
         <div id="question1" class="hidden">
 
@@ -863,15 +460,23 @@ footer {
 
             <p>Let's start with something simple!</p>
 
-            <input type="text" id="visitorName" placeholder="Enter your name..." maxlength="50" autocomplete="given-name">
+            <input
+                type="text"
+                id="visitorName"
+                placeholder="Enter your name..."
+                maxlength="50"
+                autocomplete="given-name"
+            >
 
             <p id="nameError" class="error"></p>
 
-            <button class="btn" onclick="nextQuestion()">NEXT ➜</button>
-
+            <button class="btn" onclick="nextQuestion()">
+                NEXT ➜
+            </button>
         </div>
 
 
+        <!-- QUESTION 2 -->
 
         <div id="question2" class="hidden">
 
@@ -881,15 +486,21 @@ footer {
 
             <p>Tell me your birthday! 📅</p>
 
-            <input type="date" id="visitorBirthday" autocomplete="bday">
+            <input
+                type="date"
+                id="visitorBirthday"
+                autocomplete="bday"
+            >
 
             <p id="birthdayError" class="error"></p>
 
-            <button class="btn" onclick="finishSurvey()">SUBMIT & CONTINUE 💗</button>
-
+            <button class="btn" onclick="finishSurvey()">
+                SUBMIT & CONTINUE 💗
+            </button>
         </div>
 
 
+        <!-- FUNNY BIRTHDAY MESSAGE -->
 
         <div id="birthdayJoke" class="hidden">
 
@@ -899,10 +510,7 @@ footer {
 
             <p id="personalGreeting"></p>
 
-
-
             <div class="special-line">
-
                 😂😂 I know today is your birthday, dear!
 
                 <br><br>
@@ -912,39 +520,35 @@ footer {
                 <br><br>
 
                 Stay Khush, God Bless You! ❤
-
             </div>
 
-
-
             <p>
-
                 Okay, enough questions now! 😂
-
                 Your real surprise is waiting...
-
             </p>
-
-
 
             <div id="countdown">5</div>
 
-            <p id="countText" class="small">Your surprise unlocks in 5 seconds...</p>
+            <p id="countText" class="small">
+                Your surprise unlocks in 5 seconds...
+            </p>
 
-            <button class="btn" id="startBtn" disabled>🔒 START</button>
-
+            <button class="btn" id="startBtn" disabled>
+                🔒 START
+            </button>
         </div>
 
     </div>
-
 </section>
 
 
+<!-- MAIN BIRTHDAY WEBSITE -->
 
 <main id="birthday" class="hidden">
 
-    <section class="center">
+    <!-- HERO -->
 
+    <section class="center">
         <div class="container">
 
             <div class="heart">🎂</div>
@@ -954,23 +558,20 @@ footer {
             <h1>Happy Birthday,<br>Shree! 💗</h1>
 
             <p class="subtitle">
-
                 Today is all about celebrating you, your smile,
-
                 your dreams, and the wonderful person you are.
-
             </p>
 
-            <button class="btn" onclick="scrollToSection('memories')">✨ OPEN YOUR SURPRISE</button>
-
+            <button class="btn" onclick="scrollToSection('memories')">
+                ✨ OPEN YOUR SURPRISE
+            </button>
         </div>
-
     </section>
 
 
+    <!-- PHOTO GALLERY -->
 
     <section id="memories">
-
         <div class="container">
 
             <div class="brand">CHAPTER 01 · MEMORIES</div>
@@ -978,25 +579,19 @@ footer {
             <h2>Little Moments, Beautiful Memories 📸</h2>
 
             <p>
-
                 Almost 9 years of knowing each other...
-
                 Here are a few moments to look back on
-
                 and smile about. ❤️
-
             </p>
 
             <div class="gallery" id="gallery"></div>
-
         </div>
-
     </section>
 
 
+    <!-- FRIENDSHIP LETTER -->
 
     <section id="letter">
-
         <div class="container card">
 
             <div class="brand">CHAPTER 02 · A LETTER FOR YOU</div>
@@ -1005,238 +600,126 @@ footer {
 
             <div class="divider"></div>
 
-
-
             <div class="message">
 
                 <p>
-
                     First of all, a very
-
                     <strong>HAPPY BIRTHDAY, SHRILAXMI! 🎂❤️</strong>
-
                 </p>
 
-
-
                 <p>
-
                     Some people enter our lives unexpectedly and
-
                     become a memorable part of our journey.
-
                     Sometimes, we don't even realize how much
-
                     those memories will mean to us.
-
                 </p>
-
-
 
                 <p>
-
                     Shree, I still wonder how we first met
-
                     almost 9 years ago. 🥹 Time flies so fast,
-
                     doesn't it? I'm genuinely thankful that
-
                     life brought you into mine.
-
                 </p>
-
-
 
                 <div class="special-line">
-
                     Every boy has a female friend in his life,
-
                     and for me, that girl is YOU, Shree! ❤️🫶🏻
-
                 </div>
 
-
-
                 <p>
-
                     You're the only girl I've shared so much with,
-
                     someone I could feel comfortable talking to
-
                     and sharing my thoughts with.
-
                     Thank you for coming into my life and being
-
                     a part of my journey.
-
                 </p>
 
-
-
                 <p>
-
                     Our conversations, memories, and all those
-
                     little moments will always have their own
-
                     special place.
-
                 </p>
 
-
-
                 <p>
-
                     I don't know how many more years our journey
-
                     will continue, but I genuinely hope we keep
-
                     this friendship alive for many more years.
-
                     No matter how busy life gets or where our
-
                     paths take us, I hope we never lose the
-
                     respect, understanding, and friendship
-
                     we've built over the years. 🤝❤️
-
                 </p>
 
-
-
                 <p>
-
                     On your special day, I wish you endless
-
                     happiness, good health, peace of mind,
-
                     success in everything you dream of,
-
                     and the courage to overcome every challenge
-
                     that comes your way. 🌷✨
-
                 </p>
 
-
-
                 <p>
-
                     Keep smiling, keep growing, and never stop
-
                     believing in yourself. May you achieve
-
                     everything you've been working for and find
-
                     countless reasons to be happy.
-
                 </p>
 
-
-
                 <p>
-
                     Life will change, people will come and go,
-
                     and we'll all have different responsibilities
-
                     someday. But I hope we can always look back
-
                     at these years and smile at the memories
-
                     we've made.
-
                 </p>
 
-
-
                 <p>
-
                     <strong>
-
                         Thank you for coming into my life,
-
                         Shree. And thank you for being YOU! 🫶🏻
-
                     </strong>
-
                 </p>
 
-
-
                 <p>
-
                     Enjoy your special day to the fullest,
-
                     eat lots of cake 🎂, take beautiful pictures 📸,
-
                     laugh as much as you can, and make memories
-
                     you'll cherish forever.
-
                 </p>
 
-
-
                 <p>
-
                     Once again,
-
                     <strong>HAPPY BIRTHDAY, SHRILAXMI! 🎉💗</strong>
-
                 </p>
 
-
-
                 <p>
-
                     May this new chapter bring you success,
-
                     happiness, peace, and beautiful friendships.
-
                 </p>
-
-
 
                 <p>
-
                     <strong>Always keep smiling, Shree! ❤️✨</strong>
-
                 </p>
-
-
 
                 <br>
 
-
-
                 <p class="signature">
-
                     With lots of good wishes and friendship,<br>
-
-                    — Rahulkumar 🤝
-
+                    — Rahulkumar (Roxstar) 🤝
                 </p>
 
             </div>
 
-
-
             <button class="btn" onclick="showFinal()">
-
                 💌 ONE LAST THING FOR YOU
-
             </button>
-
         </div>
-
     </section>
 
 
+    <!-- FINAL SURPRISE -->
 
     <section id="finalSection" class="hidden center">
-
         <div class="container card" id="finalMessage">
 
             <div class="heart">🎁</div>
@@ -1245,572 +728,497 @@ footer {
 
             <div class="divider"></div>
 
-
-
             <p>
-
                 Some memories don't need grand explanations.
-
                 Sometimes, it's enough to be thankful that
-
                 certain people became a part of our journey.
-
             </p>
 
-
-
             <br>
-
-
 
             <p>
-
                 Thank you for the memories, the conversations,
-
                 and the friendship we've shared throughout
-
                 these years.
-
             </p>
 
-
-
             <br>
-
-
 
             <h2>Keep Smiling, Shree! 🌷</h2>
 
             <p>
-
                 The world needs more happiness,
-
                 kindness, and beautiful smiles.
-
             </p>
 
-
-
             <br>
-
-
 
             <h2>Happiest Birthday! 🎂💗</h2>
 
             <p>Stay Khush, God Bless You! ❤</p>
 
-
-
             <br>
 
-
-
-            <p class="signature">— Rahulkumar</p>
-
-
+            <p class="signature">— Rahulkumar (Roxstar)</p>
 
             <button class="btn" onclick="replaySurprise()">
-
                 ↻ RELIVE THE SURPRISE
-
             </button>
-
         </div>
-
     </section>
 
-
-
     <footer>
-
-        Made with care by Rahulkumar ✨
-
+        Made with care by Rahulkumar · ROXSTAR ✨
     </footer>
 
 </main>
 
 
+<!-- IMAGE VIEWER -->
 
-<div id="lightbox" class="hidden" role="dialog" aria-label="Photo viewer">
+<div id="lightbox" class="hidden" role="dialog"
+     aria-label="Photo viewer">
 
     <button id="closeLightbox" aria-label="Close photo">×</button>
 
     <img id="lightboxImage" src="" alt="Expanded memory">
-
 </div>
 
 
-
 <script>
+/* =====================================
+   STAR BACKGROUND
+===================================== */
 
 const starsCanvas = document.getElementById("stars");
-
 const starsCtx = starsCanvas.getContext("2d");
 
 let stars = [];
 
-
-
 function resizeStars() {
-
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     starsCanvas.width = window.innerWidth * dpr;
-
     starsCanvas.height = window.innerHeight * dpr;
 
     starsCanvas.style.width = window.innerWidth + "px";
-
     starsCanvas.style.height = window.innerHeight + "px";
 
     starsCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-
-
     stars = Array.from({ length: 75 }, () => ({
-
         x: Math.random() * window.innerWidth,
-
         y: Math.random() * window.innerHeight,
-
         r: Math.random() * 1.8 + .4,
-
         a: Math.random(),
-
         speed: Math.random() * .012 + .003
-
     }));
-
 }
 
-
-
 function drawStars() {
-
     starsCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     stars.forEach(star => {
-
         star.a += star.speed;
 
         const opacity = .25 + Math.abs(Math.sin(star.a)) * .7;
 
         starsCtx.beginPath();
-
         starsCtx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-
         starsCtx.fillStyle = `rgba(255,220,250,${opacity})`;
-
         starsCtx.fill();
-
     });
 
     requestAnimationFrame(drawStars);
-
 }
 
-
-
 resizeStars();
-
 drawStars();
 
 window.addEventListener("resize", resizeStars);
 
 
+/* =====================================
+   STEP-BY-STEP SURVEY
+===================================== */
 
 function showQuestion(number) {
-
     document.getElementById("introStep").classList.add("hidden");
-
     document.getElementById("question1").classList.add("hidden");
-
     document.getElementById("question2").classList.add("hidden");
 
-    document.getElementById("question" + number).classList.remove("hidden");
-
+    document.getElementById("question" + number)
+        .classList.remove("hidden");
 }
-
-
 
 function nextQuestion() {
-
     const name = document.getElementById("visitorName").value.trim();
-
     const error = document.getElementById("nameError");
 
-
-
     if (!name) {
-
         error.textContent = "Please enter your name first 😂";
-
         return;
-
     }
-
-
 
     error.textContent = "";
-
     showQuestion(2);
-
 }
 
-
-
 function finishSurvey() {
-
     const name = document.getElementById("visitorName").value.trim();
-
     const birthday = document.getElementById("visitorBirthday").value;
-
     const error = document.getElementById("birthdayError");
 
-
-
     if (!name) {
-
         showQuestion(1);
-
-        document.getElementById("nameError").textContent = "Please enter your name first 😂";
-
+        document.getElementById("nameError").textContent =
+            "Please enter your name first 😂";
         return;
-
     }
-
-
 
     if (!birthday) {
-
         error.textContent = "Hey, you forgot your birthday! 😂";
-
         return;
-
     }
 
-
-
     const selectedDate = new Date(birthday + "T00:00:00");
-
     const today = new Date();
 
     today.setHours(0, 0, 0, 0);
 
-
-
     if (Number.isNaN(selectedDate.getTime()) || selectedDate > today) {
-
         error.textContent = "Please select a valid birthday date! 😊";
-
         return;
-
     }
-
-
 
     error.textContent = "";
 
     document.getElementById("personalGreeting").textContent =
-
-        "Hey " + name + "! 😂❤️ You actually answered both questions! " +
-
+        "Hey " + name +
+        "! 😂❤️ You actually answered both questions! " +
         "Now let's celebrate your special day! 🎉";
 
-
-
     document.getElementById("question2").classList.add("hidden");
-
     document.getElementById("birthdayJoke").classList.remove("hidden");
 
-
+    /*
+       Audio playback is attempted after the user's button click.
+       If the browser blocks playback, the music button can start it.
+    */
 
     playMusic();
 
     document.getElementById("musicButton").classList.remove("hidden");
 
     startBirthdayCountdown();
-
 }
 
 
+/* =====================================
+   BACKGROUND MUSIC
+===================================== */
 
 const bgm = document.getElementById("bgm");
-
 const musicButton = document.getElementById("musicButton");
 
 bgm.volume = 0.35;
 
-
-
 async function playMusic() {
-
     try {
-
         await bgm.play();
-
         musicButton.textContent = "🎵 Music ON";
-
     } catch (error) {
-
         musicButton.textContent = "🎵 Play Music";
-
     }
-
 }
-
-
 
 function toggleMusic() {
-
     if (bgm.paused) {
-
         playMusic();
-
     } else {
-
         bgm.pause();
-
         musicButton.textContent = "🔇 Music OFF";
-
     }
-
 }
 
-
-
 bgm.addEventListener("error", () => {
-
     musicButton.textContent = "🎵 Music unavailable";
-
 });
 
 
+/* =====================================
+   FIVE-SECOND COUNTDOWN
+===================================== */
 
 let birthdayTimer = null;
 
-
-
 function startBirthdayCountdown() {
-
     if (birthdayTimer) {
-
         clearInterval(birthdayTimer);
-
     }
-
-
 
     let remaining = 5;
 
     const countdown = document.getElementById("countdown");
-
     const countText = document.getElementById("countText");
-
     const startBtn = document.getElementById("startBtn");
 
-
-
     startBtn.disabled = true;
-
     startBtn.textContent = "🔒 START";
 
     countdown.textContent = remaining;
 
-    countText.textContent = "Your surprise unlocks in " + remaining + " seconds...";
-
-
+    countText.textContent =
+        "Your surprise unlocks in " + remaining + " seconds...";
 
     birthdayTimer = setInterval(() => {
-
         remaining--;
 
-
-
         if (remaining > 0) {
-
             countdown.textContent = remaining;
 
-            countText.textContent = "Your surprise unlocks in " + remaining + " seconds...";
-
+            countText.textContent =
+                "Your surprise unlocks in " + remaining + " seconds...";
         } else {
-
             clearInterval(birthdayTimer);
-
             birthdayTimer = null;
 
             countdown.textContent = "✨";
-
             countText.textContent = "Your surprise is ready!";
 
             startBtn.disabled = false;
-
             startBtn.textContent = "💗 START THE SURPRISE";
-
         }
-
     }, 1000);
-
 }
 
 
+/* =====================================
+   OPEN BIRTHDAY WEBSITE
+===================================== */
 
-function scrollToSection(id) {
+document.getElementById("startBtn").addEventListener("click", () => {
+    const startBtn = document.getElementById("startBtn");
 
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    if (startBtn.disabled) return;
 
-}
+    document.getElementById("welcome").classList.add("hidden");
+    document.getElementById("birthday").classList.remove("hidden");
 
+    window.scrollTo(0, 0);
 
-
-function showFinal() {
-
-    document.getElementById("letter").classList.add("hidden");
-
-    document.getElementById("finalSection").classList.remove("hidden");
-
-    document.getElementById("finalSection").scrollIntoView({ behavior: "smooth" });
-
-}
+    launchConfetti();
+});
 
 
-
-function replaySurprise() {
-
-    document.getElementById("finalSection").classList.add("hidden");
-
-    document.getElementById("birthday").classList.add("hidden");
-
-    document.getElementById("welcome").classList.remove("hidden");
-
-    document.getElementById("introStep").classList.remove("hidden");
-
-    document.getElementById("question1").classList.add("hidden");
-
-    document.getElementById("question2").classList.add("hidden");
-
-    document.getElementById("birthdayJoke").classList.add("hidden");
-
-    document.getElementById("visitorName").value = "";
-
-    document.getElementById("visitorBirthday").value = "";
-
-    document.getElementById("nameError").textContent = "";
-
-    document.getElementById("birthdayError").textContent = "";
-
-    document.getElementById("countdown").textContent = "5";
-
-    document.getElementById("countText").textContent = "Your surprise unlocks in 5 seconds...";
-
-    document.getElementById("startBtn").disabled = true;
-
-    document.getElementById("startBtn").textContent = "🔒 START";
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-}
-
-
+/* =====================================
+   PHOTO GALLERY
+   Filenames: Shri1.jpg to Shri15.jpg
+   All images are in the repository root.
+===================================== */
 
 const gallery = document.getElementById("gallery");
 
-const memoryImages = [
-
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
-
-    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80",
-
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-
-    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
-
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-
-    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80"
-
-];
-
-
-
-memoryImages.forEach((src, index) => {
-
+for (let i = 1; i <= 15; i++) {
     const figure = document.createElement("figure");
-
     figure.className = "photo";
 
-    figure.innerHTML = `
+    const img = document.createElement("img");
 
-        <img src="${src}" alt="Memory ${index + 1}" data-src="${src}">
+    img.src = `Shri${i}.jpg`;
+    img.alt = `Shree memory ${i}`;
+    img.loading = i <= 3 ? "eager" : "lazy";
 
-        <figcaption>Memory ${index + 1}</figcaption>
+    img.addEventListener("error", () => {
+        figure.classList.add("hidden");
+        console.error(`Could not load image: Shri${i}.jpg`);
+    });
 
-    `;
+    img.addEventListener("click", () => {
+        document.getElementById("lightboxImage").src = img.src;
+        document.getElementById("lightbox").classList.remove("hidden");
+    });
 
+    const caption = document.createElement("figcaption");
+
+    caption.textContent =
+        `Memory ${String(i).padStart(2, "0")} 💗`;
+
+    figure.appendChild(img);
+    figure.appendChild(caption);
     gallery.appendChild(figure);
+}
 
-});
 
-
+/* =====================================
+   PHOTO VIEWER
+===================================== */
 
 const lightbox = document.getElementById("lightbox");
 
-const lightboxImage = document.getElementById("lightboxImage");
-
-const closeLightbox = document.getElementById("closeLightbox");
-
-
-
-document.querySelectorAll(".photo img").forEach(img => {
-
-    img.addEventListener("click", () => {
-
-        lightboxImage.src = img.dataset.src;
-
-        lightbox.classList.remove("hidden");
-
-    });
-
-});
-
-
-
-closeLightbox.addEventListener("click", () => {
-
+document.getElementById("closeLightbox").addEventListener("click", () => {
     lightbox.classList.add("hidden");
+});
 
-    lightboxImage.src = "";
+lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) {
+        lightbox.classList.add("hidden");
+    }
+});
 
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        lightbox.classList.add("hidden");
+    }
 });
 
 
+/* =====================================
+   SCROLL NAVIGATION
+===================================== */
 
-lightbox.addEventListener("click", (event) => {
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
 
-    if (event.target === lightbox) {
 
-        lightbox.classList.add("hidden");
+/* =====================================
+   FINAL SURPRISE
+===================================== */
 
-        lightboxImage.src = "";
+function showFinal() {
+    const finalSection = document.getElementById("finalSection");
 
+    finalSection.classList.remove("hidden");
+
+    setTimeout(() => {
+        scrollToSection("finalSection");
+        launchConfetti();
+    }, 100);
+}
+
+
+/* =====================================
+   REPLAY SURPRISE
+===================================== */
+
+function replaySurprise() {
+    if (birthdayTimer) {
+        clearInterval(birthdayTimer);
+        birthdayTimer = null;
     }
 
-});
+    document.getElementById("finalSection").classList.add("hidden");
+    document.getElementById("birthday").classList.add("hidden");
+    document.getElementById("welcome").classList.remove("hidden");
+
+    document.getElementById("introStep").classList.remove("hidden");
+    document.getElementById("question1").classList.add("hidden");
+    document.getElementById("question2").classList.add("hidden");
+    document.getElementById("birthdayJoke").classList.add("hidden");
+
+    document.getElementById("visitorName").value = "";
+    document.getElementById("visitorBirthday").value = "";
+
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("birthdayError").textContent = "";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 
+/* =====================================
+   CONFETTI EFFECT
+===================================== */
 
-document.getElementById("startBtn").addEventListener("click", () => {
+const confettiCanvas = document.getElementById("confetti");
+const confettiCtx = confettiCanvas.getContext("2d");
 
-    document.getElementById("welcome").classList.add("hidden");
+let particles = [];
+let confettiFrame = null;
 
-    document.getElementById("birthday").classList.remove("hidden");
+function resizeConfetti() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    document.getElementById("birthday").scrollIntoView({ behavior: "smooth" });
+    confettiCanvas.width = window.innerWidth * dpr;
+    confettiCanvas.height = window.innerHeight * dpr;
 
-});
+    confettiCanvas.style.width = window.innerWidth + "px";
+    confettiCanvas.style.height = window.innerHeight + "px";
 
+    confettiCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+resizeConfetti();
+
+window.addEventListener("resize", resizeConfetti);
+
+function launchConfetti() {
+    const colors = ["#ff75b5", "#c5a3ff", "#ffffff", "#ffd166"];
+
+    particles = Array.from({ length: 110 }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: -Math.random() * window.innerHeight,
+        vx: (Math.random() - .5) * 3,
+        vy: Math.random() * 3 + 2,
+        size: Math.random() * 5 + 3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        rotation: Math.random() * 360,
+        rotationSpeed: (Math.random() - .5) * 8
+    }));
+
+    if (confettiFrame) {
+        cancelAnimationFrame(confettiFrame);
+    }
+
+    animateConfetti();
+}
+
+function animateConfetti() {
+    confettiCtx.clearRect(
+        0, 0, window.innerWidth, window.innerHeight
+    );
+
+    particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.rotationSpeed;
+        p.vy += .025;
+
+        confettiCtx.save();
+
+        confettiCtx.translate(p.x, p.y);
+        confettiCtx.rotate(p.rotation * Math.PI / 180);
+
+        confettiCtx.fillStyle = p.color;
+
+        confettiCtx.fillRect(
+            -p.size / 2,
+            -p.size / 2,
+            p.size,
+            p.size * 1.7
+        );
+
+        confettiCtx.restore();
+    });
+
+    particles = particles.filter(
+        p => p.y < window.innerHeight + 30
+    );
+
+    if (particles.length > 0) {
+        confettiFrame = requestAnimationFrame(animateConfetti);
+    } else {
+        confettiCtx.clearRect(
+            0, 0, window.innerWidth, window.innerHeight
+        );
+
+        confettiFrame = null;
+    }
+}
 </script>
 
 </body>
-
 </html>
